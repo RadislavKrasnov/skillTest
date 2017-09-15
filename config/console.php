@@ -30,6 +30,11 @@ $config = [
         ],
     ],
     */
+    'controllerMap' => [
+        'fixture' => [
+            'class' => 'yii\faker\FixtureController',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {

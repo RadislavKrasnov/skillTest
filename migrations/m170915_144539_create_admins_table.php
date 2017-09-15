@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `admins`.
  */
-class m170915_063722_create_admins_table extends Migration
+class m170915_144539_create_admins_table extends Migration
 {
     /**
      * @inheritdoc

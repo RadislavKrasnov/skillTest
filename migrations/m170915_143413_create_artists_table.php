@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `artists`.
  */
-class m170915_062318_create_artists_table extends Migration
+class m170915_143413_create_artists_table extends Migration
 {
     /**
      * @inheritdoc
