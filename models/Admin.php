@@ -12,9 +12,6 @@ use yii\db\ActiveRecord;
 
 class Admin extends ActiveRecord
 {
-    public $id;
-    public $email;
-    public $password;
 
     public static function tableName()
     {
