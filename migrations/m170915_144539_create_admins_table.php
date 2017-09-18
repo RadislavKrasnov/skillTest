@@ -16,6 +16,7 @@ class m170915_144539_create_admins_table extends Migration
             'id' => $this->primaryKey(),
             'email' => $this->string()->unique(),
             'password' => $this->string(),
+            'auth_key' => $this->string(),
         ]);
     }
 

@@ -19,6 +19,12 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+        'admin' => [
+            'identityClass' => 'app\models\Admin',
+            'enableAutoLogin' => true,
+            'class' => 'yii\web\User',
+            'loginUrl' => ['auth/login']
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

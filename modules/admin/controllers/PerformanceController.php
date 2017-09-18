@@ -2,12 +2,14 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\ArtistPerformance;
 use Yii;
 use app\models\Performance;
 use app\models\PerformanceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Artist;
 
 /**
  * PerformanceController implements the CRUD actions for Performance model.

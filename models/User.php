@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use Yii;
 
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
@@ -99,6 +100,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-        return $this->password === $password;
+        return Yii::$app->getSecurity()->validatePassword($password, $this->password);
+//        return $this->password === $password;
     }
 }

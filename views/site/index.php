@@ -18,15 +18,13 @@ $this->title = 'My Yii Application';
                         <th>Time</th>
                     </tr>
                     <?php foreach ($artists as $artist): ?>
-                        <?php foreach ($artist->performance as $performance): ?>
-                    <tr>
-                        <td><?php echo $artist->name ?></td>
-                        <td><?php echo $performance->concert->title ?></td>
-                        <td><?php echo $performance->concert->place ?></td>
-                        <td><?php echo $performance->date ?></td>
-                        <td><?php echo $performance->time ?></td>
-                    </tr>
-                        <?php endforeach; ?>
+                            <tr>
+                                <td><?php echo $artist->name ?></td>
+                                <td><?php echo $artist->performance->concert->title ?></td>
+                                <td><?php echo $artist->performance->concert->place ?></td>
+                                <td><?php echo $artist->performance->date ?></td>
+                                <td><?php echo $artist->performance->time ?></td>
+                            </tr>
                     <?php endforeach; ?>
                 </table>
             </div>

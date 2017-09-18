@@ -11,6 +11,17 @@ use yii\db\ActiveRecord;
 
 class Artist extends ActiveRecord
 {
+    public $password;
+    public $authKey;
+
+    public function rules()
+    {
+        return [
+            ['id', 'number'],
+            ['name', 'string']
+        ];
+    }
+
     public static function tableName()
     {
         return '{{artists}}';
@@ -18,9 +29,16 @@ class Artist extends ActiveRecord
 
     public function getPerformance()
     {
-        return $this->hasMany(Performance::className(), ['id' => 'performances_id'])
-            ->viaTable('artists_performances', ['artists_id' => 'id']);
+//        return $this->hasMany(Performance::className(), ['id' => 'artists_id'])
+//            ->viaTable('performances', ['artists_id' => 'id']);
+        return $this->hasOne(Performance::className(), ['artists_id' => 'id']);
     }
+
+//    public function getConcert()
+//    {
+//        return $this->hasMany(Concert::className(), ['id' => 'concerts_id'])
+//            ->viaTable('artists_concerts', ['artists_id' => 'id']);
+//    }
 
     public static function getAll()
     {

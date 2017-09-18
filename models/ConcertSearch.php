@@ -18,7 +18,7 @@ class ConcertSearch extends Concert
     public function rules()
     {
         return [
-            [['id', 'performance_id'], 'integer'],
+//            [['id', 'performance_id'], 'integer'],
             [['title', 'place'], 'safe'],
         ];
     }
@@ -60,7 +60,7 @@ class ConcertSearch extends Concert
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'performance_id' => $this->performance_id,
+//            'performance_id' => $this->performance_id,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

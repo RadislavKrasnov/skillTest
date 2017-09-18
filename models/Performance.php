@@ -18,6 +18,15 @@ class Performance extends ActiveRecord
 //    public $artist_id;
 //    public $place_id;
 
+    public function rules()
+    {
+        return [
+            ['id', 'number'],
+            ['date', 'string'],
+            ['time', 'string']
+        ];
+    }
+
     public static function tableName()
     {
         return '{{performances}}';
@@ -25,13 +34,16 @@ class Performance extends ActiveRecord
 
     public function getArtist()
     {
-        return $this->hasMany(Artist::className(), ['id' => 'artists_id'])
-            ->viaTable('artists_performances', ['performances_id' => 'id']);
+//        return $this->hasMany(Artist::className(), ['id' => 'artists_id'])
+//            ->viaTable('performances', ['artists_id' => 'id']);
+        return $this->hasOne(Artist::className(), ['id' => 'artists_id']);
     }
 
     public function getConcert()
     {
-        return $this->hasOne(Concert::className(), ['performance_id' => 'id']);
+//        return $this->hasMany(Concert::className(), ['id' => 'concerts_id'])
+//            ->viaTable('performances', ['concerts_id' => 'id']);
+        return $this->hasOne(Concert::className(), ['id' => 'concerts_id']);
     }
 
 }
