@@ -2,6 +2,8 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Concert;
+use app\models\Performance;
 use Yii;
 use app\models\Artist;
 use app\models\ArtistSearch;
@@ -64,12 +66,17 @@ class ArtistController extends Controller
     public function actionCreate()
     {
         $model = new Artist();
+        $concerts = new Performance();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $concerts->artists_id = $model->id;
+            $concerts->concerts_id = Yii::$app->request->post('concerts_id');
+            $concerts->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'concerts' => $concerts
             ]);
         }
     }

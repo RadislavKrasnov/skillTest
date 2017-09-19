@@ -46,4 +46,14 @@ class Performance extends ActiveRecord
         return $this->hasOne(Concert::className(), ['id' => 'concerts_id']);
     }
 
+    public static function concerts()
+    {
+        $concerts = Concert::find()->all();
+        $arrayConcert = [];
+        foreach ($concerts as $concert) {
+            $arrayConcert[$concert->id] = $concert->title;
+        }
+        return $arrayConcert;
+    }
+
 }

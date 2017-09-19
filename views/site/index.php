@@ -19,11 +19,21 @@ $this->title = 'My Yii Application';
                     </tr>
                     <?php foreach ($artists as $artist): ?>
                             <tr>
-                                <td><?php echo $artist->name ?></td>
-                                <td><?php echo $artist->performance->concert->title ?></td>
-                                <td><?php echo $artist->performance->concert->place ?></td>
-                                <td><?php echo $artist->performance->date ?></td>
-                                <td><?php echo $artist->performance->time ?></td>
+                                <td><?php echo !empty($artist->name) ?
+                                        $artist->name :
+                                        '-' ?></td>
+                                <td><?php echo !empty($artist->performance->concert->title) ?
+                                        $artist->performance->concert->title :
+                                        '-' ?></td>
+                                <td><?php echo !empty($artist->performance->concert->place) ?
+                                        $artist->performance->concert->place :
+                                        '-' ?></td>
+                                <td><?php echo !empty($artist->performance->date) ?
+                                        $artist->performance->date :
+                                        '-' ?></td>
+                                <td><?php echo !empty($artist->performance->time) ?
+                                        $artist->performance->time :
+                                        '-' ?></td>
                             </tr>
                     <?php endforeach; ?>
                 </table>

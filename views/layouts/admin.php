@@ -38,6 +38,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/admin']],
+            ['label' => 'Display', 'url' => ['/']],
             ['label' => 'Artists', 'url' => ['/admin/artist/index']],
             ['label' => 'Concerts', 'url' => ['/admin/concert/index']],
             ['label' => 'Performances', 'url' => ['/admin/performance/index']],

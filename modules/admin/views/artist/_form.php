@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
 <!--    --><?//= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($concerts, 'concerts_id')->dropdownList( \app\models\Performance::concerts(), ['name'=>'concerts_id'])->label('Concert');?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
